@@ -1,0 +1,49 @@
+#---------------------------------------------------------------
+import pygame, sys, time
+
+pygame.init()
+
+white = (255, 255, 255)
+black = (0, 0, 0)
+red = (255, 0, 0)
+
+clock = pygame.time.Clock()
+
+screen = pygame.display.set_mode((800,600))
+pygame.display.set_caption('Game Test')
+#----------------------------------------------------------------
+r1 = pygame.image.load("running/sprite_running1.png")
+r2 = pygame.image.load("running/sprite_running2.png")
+r3 = pygame.image.load("running/sprite_running3.png")
+r4 = pygame.image.load("running/sprite_running4.png")
+r5 = pygame.image.load("running/sprite_running5.png")
+r6 = pygame.image.load("running/sprite_running6.png")
+r7 = pygame.image.load("running/sprite_running7.png")
+r8 = pygame.image.load("running/sprite_running8.png")
+r9 = pygame.image.load("running/sprite_running9.png")
+r10 = pygame.image.load("running/sprite_running10.png")
+r11 = pygame.image.load("running/sprite_running11.png")
+r12 = pygame.image.load("running/sprite_running12.png")
+        
+runningList = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12]
+currentImage = 1
+#----------------------------------------------------------------
+gameExit = False
+
+while not gameExit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            gameExit = True
+    screen.fill(white)
+    pygame.display.update()
+    for i in range(12):
+        screen.blit(runningList[i], (10,10))
+        clock.tick(24)
+        pygame.display.update()
+        screen.fill(white)
+        
+        
+    pygame.display.update()
+    clock.tick(24)
+#---------------------------------------------------------------
+pygame.quit()
